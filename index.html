@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090909" />
+  <meta name="description" content="Tojioka — anime editor. Watch edits, explore project files and presets, and find official socials." />
+  <title>Tojioka — Anime Editor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <header class="site-nav" id="top">
+    <a class="brand" href="#top" aria-label="Tojioka home">
+      <span class="brand-mark">T</span>
+      <span>TOJIOKA</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#work">Work</a>
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#community">Socials</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <a class="nav-cta" href="https://payhip.com/Tojioka" target="_blank" rel="noreferrer">Shop files <span>↗</span></a>
+    <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#work">Work</a>
+    <a href="#shop">Shop</a>
+    <a href="#about">About</a>
+    <a href="#community">Socials</a>
+    <a href="#faq">FAQ</a>
+  </div>
+
+  <main>
+    <section class="hero section-shell">
+      <div class="hero-card reveal">
+        <div class="hero-banner">
+          <div class="banner-grid"></div>
+          <div class="banner-orb orb-one"></div>
+          <div class="banner-orb orb-two"></div>
+          <div class="banner-word">TOJIOKA</div>
+          <span class="banner-tag">ANIME EDITOR // AE</span>
+        </div>
+
+        <div class="profile-row">
+          <div class="profile-image-wrap">
+            <img
+              class="profile-image"
+              src="https://ugc.production.linktr.ee/3a1f045b-343f-4d94-9878-f3a6b48c572e_tojioka-pfp.png?io=true&size=avatar-v3_0"
+              alt="Tojioka profile picture"
+              onerror="this.style.display='none';this.parentElement.classList.add('fallback')"
+            />
+            <span class="fallback-letter">T</span>
+          </div>
+
+          <div class="profile-copy">
+            <div class="eyebrow"><span class="live-dot"></span> EDITOR / CREATOR</div>
+            <h1>TOJIOKA<span class="accent-dot">.</span></h1>
+            <p>High-impact anime edits, manga compositions, color work and editing resources — built in After Effects.</p>
+
+            <div class="social-row" aria-label="Social links">
+              <a class="social-icon" href="https://www.tiktok.com/@tojioka" target="_blank" rel="noreferrer" aria-label="TikTok" title="TikTok">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 3c.3 2.2 1.6 3.6 3.8 4v3.1c-1.5-.1-2.8-.5-3.8-1.3v6.4A6.2 6.2 0 1 1 9 9v3.2a3.1 3.1 0 1 0 2.2 3V3h3.3Z"/></svg>
+              </a>
+              <a class="social-icon" href="https://www.youtube.com/@Tojioka" target="_blank" rel="noreferrer" aria-label="YouTube" title="YouTube">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2s-.2-1.5-.9-2.1c-.8-.8-1.7-.8-2.1-.9C15.7 4 12 4 12 4s-3.7 0-6.6.2c-.4 0-1.3.1-2.1.9-.7.6-.9 2.1-.9 2.1S2.2 9 2.2 10.8v1.7c0 1.8.2 3.6.2 3.6s.2 1.5.9 2.1c.8.8 1.9.8 2.4.9 1.8.2 6.3.2 6.3.2s3.7 0 6.6-.2c.4 0 1.3-.1 2.1-.9.7-.6.9-2.1.9-2.1s.2-1.8.2-3.6v-1.7c0-1.8-.2-3.6-.2-3.6ZM10 15.1V8.9l6 3.1-6 3.1Z"/></svg>
+              </a>
+              <a class="social-icon" href="https://discord.gg/TxWr2xfDUf" target="_blank" rel="noreferrer" aria-label="Discord" title="Discord">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 5.3A16 16 0 0 0 15.6 4l-.5 1a13.4 13.4 0 0 0-6.2 0l-.5-1a16.4 16.4 0 0 0-4 1.3C1.9 9.1 1.2 12.8 1.5 16.4a16 16 0 0 0 4.9 2.5l1.2-1.7a10 10 0 0 1-1.9-.9l.5-.4a11.7 11.7 0 0 0 11.6 0l.6.4a12.7 12.7 0 0 1-1.9.9l1.2 1.7a16.2 16.2 0 0 0 4.9-2.5c.4-4.2-.7-7.8-3.1-11.1ZM8.5 14.5c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.1 1.1 2.1 2.4-.9 2.4-2.1 2.4Zm7 0c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.1 1.1 2.1 2.4-.9 2.4-2.1 2.4Z"/></svg>
+              </a>
+              <a class="social-icon" href="https://www.instagram.com/tojioka/" target="_blank" rel="noreferrer" aria-label="Instagram" title="Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M7.2 2h9.6A5.2 5.2 0 0 1 22 7.2v9.6a5.2 5.2 0 0 1-5.2 5.2H7.2A5.2 5.2 0 0 1 2 16.8V7.2A5.2 5.2 0 0 1 7.2 2Zm-.1 2A3.1 3.1 0 0 0 4 7.1v9.8A3.1 3.1 0 0 0 7.1 20h9.8a3.1 3.1 0 0 0 3.1-3.1V7.1A3.1 3.1 0 0 0 16.9 4H7.1Zm10.3 1.5a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 7.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8Zm0 2a2.9 2.9 0 1 0 0 5.8 2.9 2.9 0 0 0 0-5.8Z" clip-rule="evenodd"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="profile-actions">
+            <a class="button button-primary" href="#work">Watch edits <span>↓</span></a>
+            <a class="button button-secondary" href="https://payhip.com/Tojioka" target="_blank" rel="noreferrer">Visit shop <span>↗</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-grid reveal">
+        <article class="stat-card">
+          <span class="stat-value" data-count="80" data-suffix="K+">0</span>
+          <span class="stat-label">TikTok followers</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-value" data-count="1.4" data-decimals="1" data-suffix="M+">0</span>
+          <span class="stat-label">TikTok likes</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-value" data-count="190" data-suffix="+">0</span>
+          <span class="stat-label">Published edits</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-value">AE</span>
+          <span class="stat-label">After Effects workflow</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell section" id="work">
+      <div class="section-heading reveal">
+        <div>
+          <span class="section-kicker">01 / SELECTED WORK</span>
+          <h2>Edits that <span>hit.</span></h2>
+        </div>
+        <p>Anime, manga composition and motion-focused edits — with the full channel one click away.</p>
+      </div>
+
+      <div class="work-layout">
+        <article class="video-feature reveal">
+          <div class="video-frame">
+            <iframe
+              src="https://www.youtube.com/embed/videoseries?list=UUfrQMAn0aKzml5phj35JMAw"
+              title="Tojioka YouTube uploads"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <div class="video-meta">
+            <div>
+              <span class="pill">LATEST UPLOADS</span>
+              <h3>Tojioka on YouTube</h3>
+              <p>Longer uploads and selected edits from the official channel.</p>
+            </div>
+            <a class="round-link" href="https://www.youtube.com/@Tojioka" target="_blank" rel="noreferrer" aria-label="Open YouTube">↗</a>
+          </div>
+        </article>
+
+        <div class="work-stack">
+          <a class="work-card reveal" href="https://www.youtube.com/@Tojioka" target="_blank" rel="noreferrer">
+            <div class="work-card-bg work-bg-one"></div>
+            <span class="work-index">001</span>
+            <div class="work-card-copy">
+              <span>ANIME EDIT</span>
+              <h3>Got the Club going up...</h3>
+            </div>
+            <span class="work-arrow">↗</span>
+          </a>
+          <a class="work-card reveal" href="https://www.youtube.com/@Tojioka" target="_blank" rel="noreferrer">
+            <div class="work-card-bg work-bg-two"></div>
+            <span class="work-index">002</span>
+            <div class="work-card-copy">
+              <span>DAVID MARTINEZ</span>
+              <h3>CUTE JUMPSTYLE (Slowed)</h3>
+            </div>
+            <span class="work-arrow">↗</span>
+          </a>
+          <a class="work-card reveal" href="https://www.tiktok.com/@tojioka/video/7499555901267856662" target="_blank" rel="noreferrer">
+            <div class="work-card-bg work-bg-three"></div>
+            <span class="work-index">003</span>
+            <div class="work-card-copy">
+              <span>RE:ZERO</span>
+              <h3>Subaru / featured TikTok edit</h3>
+            </div>
+            <span class="work-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="center-actions reveal">
+        <a class="button button-primary" href="https://www.tiktok.com/@tojioka" target="_blank" rel="noreferrer">More on TikTok <span>↗</span></a>
+        <a class="text-link" href="https://www.youtube.com/@Tojioka" target="_blank" rel="noreferrer">Browse YouTube <span>→</span></a>
+      </div>
+    </section>
+
+    <section class="section section-shop" id="shop">
+      <div class="section-shell">
+        <div class="section-heading reveal">
+          <div>
+            <span class="section-kicker">02 / SHOP</span>
+            <h2>Get the <span>resources.</span></h2>
+          </div>
+          <p>Project files and color presets straight from Tojioka’s editing workflow.</p>
+        </div>
+
+        <div class="product-grid">
+          <a class="product-card reveal" href="https://payhip.com/b/hbWN8" target="_blank" rel="noreferrer">
+            <div class="product-media">
+              <img src="https://pe56d.s3.amazonaws.com/o_1iv8rnant13dn1gkbqllmmb1ehqt.png" alt="Dark CC product" loading="lazy" />
+              <span class="product-tag">PRESET</span>
+            </div>
+            <div class="product-body">
+              <div><h3>Dark CC</h3><p>After Effects 2020 color preset.</p></div>
+              <strong>€4+</strong>
+            </div>
+          </a>
+
+          <a class="product-card product-featured reveal" href="https://payhip.com/b/haN6W" target="_blank" rel="noreferrer">
+            <div class="product-media">
+              <img src="https://pe56d.s3.amazonaws.com/o_1iv6feujl1mrh1crl19uruaqs5p16.png" alt="Goku vs Saitama project file" loading="lazy" />
+              <span class="product-tag">PROJECT FILE</span>
+            </div>
+            <div class="product-body">
+              <div><h3>Goku vs Saitama</h3><p>Full AE 2020 manga composition project.</p></div>
+              <strong>€7+</strong>
+            </div>
+          </a>
+
+          <a class="product-card reveal" href="https://payhip.com/b/69BFE" target="_blank" rel="noreferrer">
+            <div class="product-media">
+              <img src="https://pe56d.s3.amazonaws.com/o_1i1vlc7f257jpsklq91kuqv3i10.jpg" alt="30k Demon Slayer project file" loading="lazy" />
+              <span class="product-tag">PROJECT FILE</span>
+            </div>
+            <div class="product-body">
+              <div><h3>30K Demon Slayer Special</h3><p>Project, shakes, CC, clips and settings.</p></div>
+              <strong>FREE+</strong>
+            </div>
+          </a>
+
+          <a class="product-card reveal" href="https://payhip.com/b/1yK8q" target="_blank" rel="noreferrer">
+            <div class="product-media">
+              <img src="https://pe56d.s3.amazonaws.com/o_1hpbu25ai1qg5m6vmoueltkh8r.png" alt="Bright CC product" loading="lazy" />
+              <span class="product-tag">PRESET</span>
+            </div>
+            <div class="product-body">
+              <div><h3>Bright CC</h3><p>Fast bright color treatment for edits.</p></div>
+              <strong>€2+</strong>
+            </div>
+          </a>
+        </div>
+
+        <div class="shop-note reveal">
+          <span>All purchases are handled securely on Payhip.</span>
+          <a href="https://payhip.com/Tojioka" target="_blank" rel="noreferrer">Open full shop <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell section" id="about">
+      <div class="about-layout">
+        <div class="about-sticky reveal">
+          <span class="section-kicker">03 / ABOUT</span>
+          <h2>Motion. Color.<br><span>Impact.</span></h2>
+        </div>
+
+        <div class="about-copy">
+          <article class="about-block reveal">
+            <span class="about-number">01</span>
+            <div>
+              <h3>Anime-focused editing</h3>
+              <p>Tojioka creates short-form anime edits built around timing, strong visual impact, manga composition and polished color work.</p>
+            </div>
+          </article>
+          <article class="about-block reveal">
+            <span class="about-number">02</span>
+            <div>
+              <h3>Built in After Effects</h3>
+              <p>His public project files and presets are made for After Effects 2020, with resources ranging from color presets to full composition files.</p>
+            </div>
+          </article>
+          <article class="about-block reveal">
+            <span class="about-number">03</span>
+            <div>
+              <h3>Resources for other editors</h3>
+              <p>The Discord and shop extend beyond finished edits — sharing clips, materials, project files and quality/upscale help for the editing community.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-community" id="community">
+      <div class="section-shell">
+        <div class="community-card reveal">
+          <div class="community-glow"></div>
+          <div class="community-copy">
+            <span class="section-kicker">04 / COMMUNITY</span>
+            <h2>Follow the work.<br><span>Join the circle.</span></h2>
+            <p>New edits, longer uploads, resources and a Discord built around helping editors improve.</p>
+          </div>
+
+          <div class="social-list">
+            <a href="https://www.tiktok.com/@tojioka" target="_blank" rel="noreferrer" class="social-list-item">
+              <span class="social-list-name">TikTok</span><span>@tojioka</span><b>↗</b>
+            </a>
+            <a href="https://www.youtube.com/@Tojioka" target="_blank" rel="noreferrer" class="social-list-item">
+              <span class="social-list-name">YouTube</span><span>@Tojioka</span><b>↗</b>
+            </a>
+            <a href="https://discord.gg/TxWr2xfDUf" target="_blank" rel="noreferrer" class="social-list-item">
+              <span class="social-list-name">Discord</span><span>Clips + resources</span><b>↗</b>
+            </a>
+            <a href="https://www.instagram.com/tojioka/" target="_blank" rel="noreferrer" class="social-list-item">
+              <span class="social-list-name">Instagram</span><span>@tojioka</span><b>↗</b>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell section" id="faq">
+      <div class="section-heading reveal">
+        <div>
+          <span class="section-kicker">05 / FAQ</span>
+          <h2>Quick <span>answers.</span></h2>
+        </div>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item reveal">
+          <summary><span>What does Tojioka edit with?</span><b>+</b></summary>
+          <p>The public project files and presets are built for Adobe After Effects 2020. Some products also use plugins such as Magic Bullet Looks, Boris FX Sapphire and Deep Glow.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary><span>Where can I get project files and presets?</span><b>+</b></summary>
+          <p>They are sold through Tojioka’s official Payhip shop. The current catalog includes Dark CC, Bright CC, a Goku vs Saitama composition project and a free/pay-what-you-want Demon Slayer project file.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary><span>What is the Discord for?</span><b>+</b></summary>
+          <p>The server is focused on helping editors, with clips/materials, editing resources and quality/upscale help.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary><span>How can I contact Tojioka?</span><b>+</b></summary>
+          <p>For file questions or contact, use Discord @wusayy or email tojioka.contact@gmail.com.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section-shell contact-section reveal" id="contact">
+      <div class="contact-card">
+        <span class="section-kicker">CONTACT</span>
+        <h2>Need to reach<br><span>Tojioka?</span></h2>
+        <div class="contact-links">
+          <a href="mailto:tojioka.contact@gmail.com">tojioka.contact@gmail.com <span>↗</span></a>
+          <button id="copyDiscord" type="button">Discord: @wusayy <span id="copyText">copy</span></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer section-shell">
+    <a class="brand" href="#top"><span class="brand-mark">T</span><span>TOJIOKA</span></a>
+    <p>Anime editor / creator.</p>
+    <div class="footer-links"><a href="#top">Back to top ↑</a><a href="https://linktr.ee/tojioka" target="_blank" rel="noreferrer">Official Linktree ↗</a></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
